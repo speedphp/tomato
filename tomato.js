@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 const figlet = require('figlet')
-const notifier = require('node-notifier')
+const NotificationCenter = require('node-notifier').NotificationCenter;
 const storage = require('./storage.js')
 
 let word_col = 55
 let word_row = 13
 let arg = process.argv[2] == undefined ? 30 : process.argv[2]
 let endTime = new Date().getTime() + arg * 60 * 1000
-
+let notifier = new NotificationCenter({
+    customPath: './terminal-notifier.app/Contents/MacOS/terminal-notifier'
+})
 if (arg == "s" || arg == "status") {
     let day_tomato = storage.load()
     if (false != day_tomato) {
@@ -40,9 +42,9 @@ if (arg == "s" || arg == "status") {
 
         console.log('\n\n\n\n\n\n')
         console.log(Array(
-            Math.round(process.stdout.columns / 2 -
-                (distance / (arg * 60 * 1000) * (process.stdout.columns / 2))
-            )).join('💰'))
+            Math.round(
+                (distance / (arg * 60 * 1000) * (process.stdout.columns / 2) / 1.5)
+            )).join(' 💵') + " 🚚")
 
     }
 
@@ -54,8 +56,8 @@ if (arg == "s" || arg == "status") {
             clearInterval(timer)
             storage.saveOne(arg)
             notifier.notify({
-                title: '🍅🍅 Tomato JS 🍅🍅',
-                message: 'Hello, time is up!'
+                title: 'Tomato🍅 Timer',
+                message: 'We got the money 💰 ! 🎉🎉🎉',
             })
         }
     }, 1000)
