@@ -12,3 +12,18 @@ npm install tomato.js -g
 ```
 tomato [minute]
 ```
+minute can be a Number or status.
+
+Number is the tomato clock.
+
+status show the history.
+
+### Example
+
+```
+tomato 30 
+```
+
+```
+tomato status
+```
