@@ -1,0 +1,24 @@
+{
+  "name": "tomato.js",
+  "version": "2.0.1",
+  "author": "speedphp",
+  "description": "My Pomodoro Timer!",
+  "homepage": "https://github.com/speedphp/tomato#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/speedphp/tomato.git"
+  },
+  "main": "tomato.js",
+  "bin": {
+    "tomato": "./tomato.js",
+    "to": "./tomato.js"
+  },
+  "dependencies": {
+    "figlet": "1.4.0",
+    "node-notifier": "7.0.1"
+  },
+  "keywords": [
+    "pomodoro"
+  ]
+}
