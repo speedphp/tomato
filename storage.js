@@ -7,6 +7,7 @@ exports = module.exports = {
         if (fs.existsSync(STORAGE_FILE)) {
             let fdata = fs.readFileSync(STORAGE_FILE).toString().split("\n")
             let day_tomato = {}
+            fdata.reverse()
             fdata.forEach(function (line) {
                 if (line != "") {
                     let d = line.split(":")
